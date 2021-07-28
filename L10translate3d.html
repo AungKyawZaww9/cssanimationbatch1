@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>L10 Translate 3D</title>
+
+	
+</head>
+
+<style type="text/css">
+
+		*{
+			perspective: 1000px;  /*အမြဲများနေရမည် */
+		}
+		
+		img{
+			width: 300px;
+			margin: auto;
+			display: block;
+			margin-top: 200px;
+
+			transition: transform 2s;
+		}
+
+		img:hover{
+			/*transform: rotate(45deg);*/
+			transform: translateZ(300px);
+			transform: translateZ(500px);
+			transform: translateZ(800px);
+
+		}
+</style>
+
+<body>
+
+	<img src="img/dog.jpg" alt="dog">
+
+</body>
+</html>

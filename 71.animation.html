@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wave Effect</title>
+</head>
+    <style type="text/css">
+        body{
+            font-family: sans-serif;
+            background-color: #262626;
+            height: 100vh;
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            margin:0;
+            overflow:hidden;
+        }
+
+        .wave{
+            width:500px;
+            height: 500px;
+
+            position:relative;
+        }
+
+        h2{
+            text-transform: uppercase;
+            font-size:170px;
+
+            position:absolute;
+        }
+
+        h2:nth-child(1){
+            color:transparent;
+            -webkit-text-stroke:2px #03a9f4;
+
+        }
+
+        h2:nth-child(2){
+
+            color:#03a9f4;
+
+            /*clip-path: polygon(0 23%, 100% 63%, 100% 100%, 0% 100%);*/
+
+            animation-name:myani;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes myani {
+            0%{
+                clip-path: polygon(0% 45%, 14% 39%, 22% 37%, 30% 34%, 39% 33%, 46% 33%, 52% 35%, 56% 39%, 61% 43%, 66% 46%, 73% 47%, 81% 46%, 86% 44%, 93% 42%, 99% 43%, 100% 99%, 0% 99%);            }
+            50%{
+                clip-path: polygon(0 44%, 8% 53%, 13% 57%, 24% 57%, 33% 56%, 43% 53%, 50% 50%, 54% 47%, 62% 42%, 68% 39%, 78% 39%, 85% 40%, 86% 44%, 93% 46%, 100% 44%, 100% 99%, 0% 99%, 0 100%);
+            }
+
+            100%{
+                clip-path: polygon(0% 45%, 14% 39%, 22% 37%, 30% 34%, 39% 33%, 46% 33%, 52% 35%, 56% 39%, 61% 43%, 66% 46%, 73% 47%, 81% 46%, 86% 44%, 93% 42%, 99% 43%, 100% 99%, 0% 99%);            }
+
+
+
+    </style>
+
+<body>
+    <div class="wave">
+        <h2>wave</h2>
+        <h2>wave</h2>
+    </div>
+</body>
+</html>

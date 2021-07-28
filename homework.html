@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HomeWork Bottle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+    <style type="text/css">
+        body{
+            font-family: sans-serif;
+            background-color: #050e36;
+            height: 100vh;
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            margin:0;
+            overflow:hidden;
+
+        }
+
+        .container{
+            width:300px;
+            height: 300px;
+            /*background-color: red;*/
+
+            position: relative;
+        }
+
+        .glass{
+
+            font-size: 60px;
+            color:yellow;
+            margin:0;
+            align-items: center;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+
+
+            animation-name: myani;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+
+        }
+
+        @keyframes myani {
+            0%{
+                transform: translate(-300%,-50%);
+                opacity: 0;
+                clip-path: polygon(0% 85%, 100% 85%, 99% 99%, 0% 99%);
+                -webkit-text-stroke: 1px #c9f0d6;
+            }
+
+            50%{
+                opacity: 1;
+                clip-path: polygon(0 0, 100% 0, 99% 99%, 0% 99%);
+                -webkit-text-stroke: 1px #c9f0d6;
+            }
+
+            100%{
+                transform: translate(150%,-50%);
+                opacity: 0;
+                -webkit-text-stroke: 1px #c9f0d6;
+            }
+        }
+
+        .glass:nth-child(1){
+            color:transparent;
+
+        }
+
+        .glass:nth-child(2){
+            color:#f3cf7a;
+
+        }
+
+        .bottleup{
+            content:'';
+            width:1%;
+            height: 5px;
+            background-color: #f3cf7a;
+            position: absolute;
+            top:30%;
+            left:45%;
+
+            animation-name: fill;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+
+        }
+
+
+        @keyframes fill {
+            /*0%{*/
+
+            /*    top: 30%;*/
+            /*    left:0;*/
+            /*}*/
+
+            /*50%{*/
+            /*    opacity: 0;*/
+            /*    top:30%;*/
+            /*    left:45%;*/
+
+            /*}*/
+
+            /*100%{*/
+            /*    opacity: 0;*/
+            /*    top:30%;*/
+            /*    left:100%;*/
+            /*}*/
+
+            0%{
+                top:10%;
+            }
+
+            50%{
+                top:40%;
+                opacity:0;
+            }
+
+            100%{
+                top:50%;
+                opacity: 0;
+            }
+        }
+
+
+
+
+
+
+        h3{
+            font-size:25px;
+            color:#be6a15;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin:0;
+            text-align:center;
+            position:absolute;
+            bottom:20px;
+            left:50%;
+            transform: translate(-50%);
+
+        }
+
+        .bar::before{
+            content:"";
+            width:80%;
+            height: 5px;
+
+            background-color: #be6a15;
+
+            position: absolute;
+            bottom:80px;
+            left:10%;
+
+        }
+
+        .bar::after{
+            content:'';
+            width:80%;
+            height: 5px;
+            background-color: #f3cf7a;
+
+            overflow:hidden;
+
+            position: absolute;
+            bottom:80px;
+            left:10%;
+
+            animation-name:colorfill;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+        }
+
+
+
+        @keyframes colorfill {
+            0%{
+                width:0%;
+            }
+
+            100%{
+                width:80%;
+            }
+        }
+    </style>
+<body>
+    <div class="container">
+        <span class="bottleup"></span>
+        <i class="far fa-hourglass glass"></i>
+        <i class="far fa-hourglass glass"></i>
+
+        <div class="bar-item">
+            <span class="bar"></span>
+
+        </div>
+        <h3>Loading...</h3>
+
+
+    </div>
+</body>
+</html>

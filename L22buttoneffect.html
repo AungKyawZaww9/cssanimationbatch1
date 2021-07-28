@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>L22 Layer Swappng form left to Right Effect</title>
+</head>
+
+<style type="text/css">
+	body{
+		font-family: sans-serif;
+		background-color: grey;
+		height: 100vh;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		margin: 0;
+		overflow: hidden;
+	}
+
+	a{
+		text-decoration: none;
+		text-transform: uppercase;
+		/*color: yellow;*/
+		color: transparent;
+		font-size: 30px;
+		letter-spacing: 4px;
+
+		border: 2px solid #ff0;
+		padding: 40px 80px;
+
+		position: relative;
+		overflow: hidden;
+
+	}
+
+	a::before{
+		content: 'Button';
+		width: 100%;
+		height: 100%;
+		background-color: #272727;
+		color: yellow;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		
+		transition: all 1s;
+
+	}
+
+	a:hover::before{
+		left:0;
+		transform: scale(0) rotateY(360deg);
+	}
+
+	a::after{
+		content: 'button';
+		width: 100%;
+		height: 100%;
+		background-color: #373737;
+		color: yellow;/*ff0*/
+
+
+		position: absolute;
+		top: 0;
+		left: -100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		transform: scale(0) rotateY(0);
+		transition: all 0.5s;
+	}
+
+	a:hover::after{
+		left:0;
+		transform: scale(1) rotateY(360deg);
+	}
+</style>
+<body>
+
+	<a href="#">Button</a>
+
+</body>
+</html>
